@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+  <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
+  <style>
+    #content {
+        margin: 1px;
+    }
+    #map {
+      height: 100%;
+      width: 90%;
+      margin-left: 16px;
+    }
+  </style>
+  <title>Løypekart ØTS-Skisenter Karidalen</title>
+</head>
+<body>
+<div id="content">
+    <div data-role="main" class="ui-content">
+      <div data-role="controlgroup" data-type="horizontal">
+        <a href="#" id="grunnkart" class="ui-btn">Grunnkart</a>
+        <a href="#" id="topo2" class="ui-btn">Detaljkart</a>
+        <a href="#" id="toggle3_3km" class="ui-btn">3,3 km</a>
+        <a href="#" id="toggle3_0km" class="ui-btn">3,0 km</a>
+        <a href="#" id="toggle2_5km" class="ui-btn">2,5 km</a>
+        <a href="#" id="toggle2_0km" class="ui-btn">2,0 km</a>
+        <a href="#" id="toggle1_5km" class="ui-btn">1,5 km</a>
+        <a href="#" id="toggleStart" class="ui-btn">Start</a>
+        <a href="#" id="toggleShootingLane" class="ui-btn">Standplass</a>
+        <a href="#" id="toggleFinish" class="ui-btn">Mål</a>    
+      </div>
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+
+
+  <script src="http://openlayers.org/en/v3.0.0/build/ol.js" type="text/javascript"></script>
+  <script src="proj4.js"></script>
+  <script src="http://epsg.io/32632.js" type="text/javascript"></script>
+  <script src="nctoten.js" type="text/javascript"></script>
+
+  <script>
+    $('#topo2').click(function() {ots.toggleTopo2()});
+    $('#grunnkart').click(function() {ots.toggleGrunnkart()});
+    $('#toggle3_3km').click(function() {ots.toggle3_3km()});
+    $('#toggle3_0km').click(function() {ots.toggle3_0km()});
+    $('#toggle2_5km').click(function() {ots.toggle2_5km()});
+    $('#toggle2_0km').click(function() {ots.toggle2_0km()});
+    $('#toggle1_5km').click(function() {ots.toggle1_5km()});
+    $('#toggleStart').click(function() {ots.toggleStart()});
+    $('#toggleFinish').click(function() {ots.toggleFinish()});
+    $('#toggleShootingLane').click(function() {ots.toggleShootingLane()});
+  </script>
+
+</body>
+</html>
