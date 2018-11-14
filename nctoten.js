@@ -31,10 +31,10 @@ var ots = (function () {
             9045984
         ],
 
-        projection = ol.proj.get('EPSG:32632'),
+        projection = 'EPSG:32632',
 
         center = [596950, 6731775],
-        zoom = 17,
+        zoom = 16,
 
         matrixSet = 'EPSG:32632',
         matrixN = 18,
@@ -75,9 +75,10 @@ var ots = (function () {
     for (xfile in kmlFiles) {
         if (kmlFiles.hasOwnProperty(xfile)) {
             kmlLayers[xfile] = new ol.layer.Vector({
-                source: new ol.source.KML({
-                    projection: projection,
-                    url: kmlFiles[xfile]
+                source: new ol.source.Vector({
+                    url: kmlFiles[xfile],
+                    format: new ol.format.KML(),
+                    //projection: 'EPSG:32632'
                 }),
                 visible: false
             });
